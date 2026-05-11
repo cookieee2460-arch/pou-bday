@@ -1,20 +1,16 @@
-# Spider-Man + Pokémon + Sanrio Birthday Website
-
-Save this as `index.html` and open it in your browser.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Birthday!!!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Birthday 💖</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Bangers&display=swap" rel="stylesheet">
 
   <style>
+
     *{
       margin:0;
       padding:0;
@@ -23,453 +19,167 @@ Save this as `index.html` and open it in your browser.
 
     body{
       font-family:'Fredoka',sans-serif;
-      background:linear-gradient(135deg,#ffcade,#ffd8f5,#c7dcff);
+      background:linear-gradient(135deg,#ffd3e6,#d4e4ff,#fff0b8);
       overflow-x:hidden;
       color:white;
-      min-height:100vh;
-      position:relative;
-    }
-
-    body::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      background-image:
-      radial-gradient(circle at 20% 20%, rgba(255,255,255,0.35) 0 2px, transparent 3px),
-      radial-gradient(circle at 80% 30%, rgba(255,255,255,0.35) 0 2px, transparent 3px),
-      radial-gradient(circle at 50% 70%, rgba(255,255,255,0.35) 0 2px, transparent 3px);
-      background-size:140px 140px;
-      pointer-events:none;
+      text-align:center;
     }
 
     .hero{
       min-height:100vh;
+      padding:40px 20px;
       display:flex;
       flex-direction:column;
       justify-content:center;
       align-items:center;
-      text-align:center;
-      padding:40px 20px;
       position:relative;
     }
 
-    .title{
+    h1{
       font-family:'Bangers',cursive;
       font-size:6rem;
       letter-spacing:5px;
-      text-shadow:5px 5px 0 #ff2f6d;
-      animation:bounce 2s infinite;
-    }
-
-    @keyframes bounce{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-12px)}
+      text-shadow:4px 4px 0 #ff3c78;
     }
 
     .subtitle{
-      margin-top:15px;
-      font-size:1.3rem;
+      font-size:1.2rem;
       max-width:700px;
+      margin-top:15px;
       line-height:1.7;
     }
 
-    .floating{
-      position:absolute;
-      font-size:2rem;
-      animation:float 6s infinite ease-in-out;
-      opacity:0.9;
-    }
-
-    @keyframes float{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-20px)}
-    }
-
-    .one{top:8%;left:8%}
-    .two{top:15%;right:10%;animation-delay:1s}
-    .three{bottom:15%;left:12%;animation-delay:2s}
-    .four{bottom:12%;right:15%;animation-delay:3s}
-    .five{top:40%;left:5%;animation-delay:4s}
-    .six{top:50%;right:5%;animation-delay:2s}
-
-    .section{
-      padding:80px 20px;
-    }
-
-    .section-title{
-      text-align:center;
-      font-size:3rem;
-      margin-bottom:50px;
-      font-family:'Bangers',cursive;
-      letter-spacing:3px;
-      text-shadow:4px 4px 0 rgba(0,0,0,0.15);
-    }
-
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-      gap:25px;
-      max-width:1200px;
-      margin:auto;
-    }
-
-    .card{
-      background:rgba(255,255,255,0.18);
-      border:2px solid rgba(255,255,255,0.35);
-      backdrop-filter:blur(10px);
-      border-radius:28px;
-      padding:28px;
-      text-align:center;
-      transition:0.35s;
-      box-shadow:0 10px 30px rgba(0,0,0,0.15);
-    }
-
-    .card:hover{
-      transform:translateY(-12px) rotate(-1deg) scale(1.02);
-    }
-
-    .bigemoji{
-      font-size:4rem;
-      margin-bottom:12px;
-    }
-
-    .card h3{
-      margin-bottom:12px;
-      font-size:1.5rem;
-    }
-
-    .gallery{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-      gap:20px;
-      max-width:1100px;
-      margin:auto;
-    }
-
-    .photo{
-      aspect-ratio:1/1;
-      border-radius:25px;
+    .characters{
+      margin-top:50px;
       display:flex;
-      align-items:center;
+      flex-wrap:wrap;
       justify-content:center;
-      font-size:4rem;
-      background:rgba(255,255,255,0.18);
-      border:2px solid rgba(255,255,255,0.35);
-      backdrop-filter:blur(10px);
-      transition:0.3s;
+      gap:30px;
     }
 
-    .photo:hover{
-      transform:scale(1.06) rotate(2deg);
+    .characters img{
+      width:220px;
+      height:220px;
+      object-fit:contain;
+      transition:.3s;
+      filter:drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+    }
+
+    .characters img:hover{
+      transform:scale(1.08) rotate(4deg);
     }
 
     .message-box{
-      max-width:900px;
-      margin:0 auto;
-      background:rgba(255,255,255,0.18);
+      margin-top:70px;
+      width:90%;
+      max-width:850px;
+      background:rgba(255,255,255,0.2);
+      border-radius:30px;
       padding:40px;
-      border-radius:35px;
-      text-align:center;
+      backdrop-filter:blur(10px);
       border:2px solid rgba(255,255,255,0.3);
-      backdrop-filter:blur(12px);
-      box-shadow:0 10px 30px rgba(0,0,0,0.15);
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+    }
+
+    .message-box h2{
+      margin-bottom:20px;
+      font-size:2rem;
     }
 
     .message-box p{
-      line-height:2;
       font-size:1.15rem;
+      line-height:2;
     }
 
-    .btn{
-      margin-top:30px;
-      padding:18px 35px;
-      border:none;
-      border-radius:999px;
-      background:white;
-      color:#ff2f6d;
-      font-size:1.1rem;
-      font-family:'Fredoka';
-      font-weight:600;
-      cursor:pointer;
-      transition:0.3s;
-      box-shadow:0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .btn:hover{
-      transform:scale(1.08);
-    }
-
-    .surprise{
-      display:none;
-      margin-top:30px;
-      font-size:2rem;
-      animation:pop .5s ease;
-    }
-
-    @keyframes pop{
-      from{transform:scale(0);opacity:0}
-      to{transform:scale(1);opacity:1}
+    .spotify{
+      margin-top:50px;
     }
 
     footer{
-      padding:50px 20px;
-      text-align:center;
-      opacity:0.9;
+      margin-top:60px;
+      padding-bottom:30px;
+      opacity:0.8;
     }
 
     @media(max-width:768px){
-      .title{
+
+      h1{
         font-size:3.8rem;
       }
 
-      .subtitle{
-        font-size:1rem;
+      .characters img{
+        width:150px;
+        height:150px;
       }
 
-      .section-title{
-        font-size:2.3rem;
-      }
     }
 
   </style>
 </head>
-<body>
 
-  <div class="floating one">🕷️</div>
-  <div class="floating two">⚡</div>
-  <div class="floating three">🎀</div>
-  <div class="floating four">⭐</div>
-  <div class="floating five">💖</div>
-  <div class="floating six">🕸️</div>
+<body>
 
   <section class="hero">
 
-    <h1 class="title">HAPPY BIRTHDAY</h1>
+    <h1>HAPPY BIRTHDAY</h1>
 
     <p class="subtitle">
-      Welcome to the ultimate multiverse birthday party where Spider-Man,
-      Pokémon, and Sanrio characters all came together just for YOU 💖
+      Spider-Verse + Pokémon + Sanrio all came together to celebrate YOU 💖
     </p>
 
-  </section>
+    <div class="characters">
 
-  <section class="section">
+      <!-- Spider-Man -->
+      <img src="https://pngimg.com/d/spiderman_PNG12.png">
 
-    <h2 class="section-title">SPIDER-VERSE 🕸️</h2>
+      <!-- Pikachu -->
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png">
 
-    <div class="cards">
+      <!-- Kuromi -->
+      <img src="https://i.pinimg.com/originals/8e/5f/e6/8e5fe6cbf6f2f0db4b6f84fdcb2a9df9.png">
 
-      <div class="card">
-        <div class="bigemoji">🕷️</div>
-        <h3>Spider-Man</h3>
-        <p>
-          Friendly neighborhood birthday protector.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="bigemoji">🖤</div>
-        <h3>Miles Morales</h3>
-        <p>
-          Bringing the coolest birthday vibes ever.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="bigemoji">🕸️</div>
-        <h3>Spider Squad</h3>
-        <p>
-          Saving the multiverse one birthday cake at a time.
-        </p>
-      </div>
+      <!-- Cinnamoroll -->
+      <img src="https://i.pinimg.com/originals/f7/44/18/f74418b0a4b35a1df9d2f6d0f98f5b2f.png">
 
     </div>
 
-  </section>
+    <div class="spotify">
 
-  <section class="section">
-
-    <h2 class="section-title">POKÉMON PARTY ⚡</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <div class="bigemoji">⚡</div>
-        <h3>Pikachu</h3>
-        <p>
-          Birthday energy levels are at maximum power.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="bigemoji">👻</div>
-        <h3>Gengar</h3>
-        <p>
-          Causing chaos at the party in the best way.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="bigemoji">🎵</div>
-        <h3>Jigglypuff</h3>
-        <p>
-          Performing the official birthday concert.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="bigemoji">🔥</div>
-        <h3>Charmander</h3>
-        <p>
-          Lighting all the birthday candles.
-        </p>
-      </div>
+      <!-- REPLACE SPOTIFY LINK -->
+      <iframe style="border-radius:20px"
+      src="https://open.spotify.com/track/78lWy5svwUKTCqmRywDjQl?si=d39e4351c4ac4ba3"
+      width="320"
+      height="80"
+      frameBorder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+      </iframe>
 
     </div>
-
-  </section>
-
-  <section class="section">
-
-    <h2 class="section-title">SANRIO CAFE 🎀</h2>
-
-    <div class="cards">
-
-      <div class="card">
-        <div class="bigemoji">🎀</div>
-        <h3>Hello Kitty</h3>
-        <p>
-          Decorating the cutest birthday café ever.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="bigemoji">💜</div>
-        <h3>Kuromi</h3>
-        <p>
-          Adding chaotic cute energy to the party.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="bigemoji">☁️</div>
-        <h3>Cinnamoroll</h3>
-        <p>
-          Flying around delivering birthday wishes.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="bigemoji">🌸</div>
-        <h3>My Melody</h3>
-        <p>
-          Making everything extra adorable.
-        </p>
-      </div>
-
-    </div>
-
-  </section>
-
-  <section class="section">
-
-    <h2 class="section-title">MEMORY GALLERY 📸</h2>
-
-    <div class="gallery">
-
-      <div class="photo">🕷️</div>
-      <div class="photo">⚡</div>
-      <div class="photo">🎀</div>
-      <div class="photo">💖</div>
-      <div class="photo">⭐</div>
-      <div class="photo">🎂</div>
-
-    </div>
-
-  </section>
-
-  <section class="section">
 
     <div class="message-box">
 
-      <h2 class="section-title">SPECIAL MESSAGE 💌</h2>
+      <h2>💌 Our Message</h2>
 
       <p>
-        Happy Birthday!!!
-        I hope your day is filled with happiness, laughter,
-        amazing memories, and all your favorite things.
-        You deserve the coolest adventures, the cutest moments,
-        and the best Pokémon pulls in existence.
-        Thanks for always being iconic.
-        The Spider-Verse, Pokémon world, and Sanrio universe
-        all officially agree that you are awesome 💖
+        Happy Birthday!!!<br><br>
+
+        Thank you for being the coolest sibling ever.
+        I hope this year gives you happiness,
+        chaos, fun memories, and everything you want.<br><br>
+
+        You deserve all the love in every universe —
+        even the Spider-Verse, Pokémon world,
+        and Sanrio universe agree 💖
       </p>
-
-      <button class="btn" onclick="partyTime()">
-        CLICK FOR SURPRISE 🎁
-      </button>
-
-      <div class="surprise" id="surprise">
-        🎂 YOU UNLOCKED LEGENDARY SIBLING STATUS 🎂
-      </div>
 
     </div>
 
+    <footer>
+      made with love ✨
+    </footer>
+
   </section>
-
-  <footer>
-    made with love + spider webs + pokéballs + sanrio magic ✨
-  </footer>
-
-  <script>
-
-    function partyTime(){
-
-      document.getElementById('surprise').style.display = 'block';
-
-      const emojis = ['🎉','💖','⚡','🎀','⭐','🕷️','✨'];
-
-      for(let i = 0; i < 80; i++){
-
-        const confetti = document.createElement('div');
-
-        confetti.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
-
-        confetti.style.position = 'fixed';
-        confetti.style.left = Math.random() * 100 + 'vw';
-        confetti.style.top = '-20px';
-        confetti.style.fontSize = (Math.random() * 20 + 20) + 'px';
-        confetti.style.zIndex = '999';
-        confetti.style.pointerEvents = 'none';
-
-        confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
-
-        document.body.appendChild(confetti);
-
-        setTimeout(() => {
-          confetti.remove();
-        }, 5000);
-      }
-    }
-
-    const style = document.createElement('style');
-
-    style.innerHTML = `
-      @keyframes fall{
-        to{
-          transform:translateY(110vh) rotate(720deg);
-          opacity:0;
-        }
-      }
-    `;
-
-    document.head.appendChild(style);
-
-  </script>
 
 </body>
 </html>
-```
-
-* host it free on GitHub Pages
-* add a fake Pokémon battle or Spider-Verse intro animation
