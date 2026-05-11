@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday!!!</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Fredoka', sans-serif;
+      overflow-x:hidden;
+      background: linear-gradient(135deg,#ffb6d9,#ffd6f6,#b9d9ff);
+      min-height:100vh;
+      color:white;
+      position:relative;
+    }
+
+    /* animated background blobs */
+    .blob{
+      position:absolute;
+      border-radius:50%;
+      filter:blur(50px);
+      opacity:0.5;
+      animation: float 10s infinite ease-in-out;
+      z-index:-1;
+    }
+
+    .blob1{
+      width:300px;
+      height:300px;
+      background:#ff2e63;
+      top:-50px;
+      left:-80px;
+    }
+
+    .blob2{
+      width:250px;
+      height:250px;
+      background:#5dade2;
+      right:-50px;
+      top:150px;
+      animation-delay:2s;
+    }
+
+    .blob3{
+      width:280px;
+      height:280px;
+      background:#ffde59;
+      bottom:-80px;
+      left:30%;
+      animation-delay:4s;
+    }
+
+    @keyframes float{
+      0%,100%{
+        transform:translateY(0px);
+      }
+      50%{
+        transform:translateY(-30px);
+      }
+    }
+
+    .container{
+      width:100%;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px 20px;
+    }
+
+    h1{
+      font-family:'Bangers', cursive;
+      font-size:5rem;
+      letter-spacing:4px;
+      text-shadow:4px 4px 0px #ff2e63;
+      animation:bounce 2s infinite;
+    }
+
+    @keyframes bounce{
+      0%,100%{
+        transform:translateY(0);
+      }
+      50%{
+        transform:translateY(-10px);
+      }
+    }
+
+    .subtitle{
+      font-size:1.4rem;
+      margin-top:10px;
+      max-width:700px;
+    }
+
+    .characters{
+      display:flex;
+      gap:25px;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin-top:40px;
+    }
+
+    .card{
+      width:220px;
+      background:rgba(255,255,255,0.15);
+      backdrop-filter:blur(10px);
+      border:2px solid rgba(255,255,255,0.3);
+      border-radius:25px;
+      padding:20px;
+      transition:0.3s;
+      box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .card:hover{
+      transform:translateY(-10px) scale(1.03);
+    }
+
+    .emoji{
+      font-size:4rem;
+    }
+
+    .card h2{
+      margin-top:10px;
+      margin-bottom:10px;
+    }
+
+    .message-section{
+      margin-top:60px;
+      background:rgba(255,255,255,0.18);
+      padding:30px;
+      border-radius:30px;
+      max-width:800px;
+      backdrop-filter:blur(12px);
+      box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .message-section h3{
+      font-size:2rem;
+      margin-bottom:20px;
+    }
+
+    .message{
+      font-size:1.2rem;
+      line-height:1.8;
+    }
+
+    .surprise-btn{
+      margin-top:40px;
+      border:none;
+      padding:18px 35px;
+      border-radius:999px;
+      font-size:1.2rem;
+      font-family:'Fredoka';
+      font-weight:600;
+      cursor:pointer;
+      background:white;
+      color:#ff2e63;
+      transition:0.3s;
+      box-shadow:0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .surprise-btn:hover{
+      transform:scale(1.08);
+    }
+
+    .surprise{
+      margin-top:30px;
+      font-size:2rem;
+      display:none;
+      animation:pop 0.5s ease;
+    }
+
+    @keyframes pop{
+      from{
+        transform:scale(0);
+        opacity:0;
+      }
+      to{
+        transform:scale(1);
+        opacity:1;
+      }
+    }
+
+    .footer{
+      margin-top:70px;
+      opacity:0.8;
+      font-size:0.9rem;
+    }
+
+    /* floating stars */
+    .star{
+      position:absolute;
+      font-size:1.5rem;
+      animation:spin 8s linear infinite;
+    }
+
+    @keyframes spin{
+      from{
+        transform:rotate(0deg) translateY(0px);
+      }
+      to{
+        transform:rotate(360deg) translateY(-20px);
+      }
+    }
+
+    @media(max-width:768px){
+      h1{
+        font-size:3.5rem;
+      }
+
+      .subtitle{
+        font-size:1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+
+  <div class="star" style="top:10%;left:8%">⭐</div>
+  <div class="star" style="top:20%;right:10%">💖</div>
+  <div class="star" style="bottom:18%;left:15%">✨</div>
+  <div class="star" style="bottom:12%;right:12%">🎀</div>
+
+  <div class="container">
+
+    <h1>HAPPY BIRTHDAY</h1>
+
+    <p class="subtitle">
+      The ultimate multiverse party featuring Spider-Man, Pokémon, and Sanrio just for YOU 🕷️⚡🎀
+    </p>
+
+    <div class="characters">
+
+      <div class="card">
+        <div class="emoji">🕷️</div>
+        <h2>Spider-Verse</h2>
+        <p>
+          Hope your birthday is more legendary than saving New York.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">⚡</div>
+        <h2>Pokémon Zone</h2>
+        <p>
+          You’re officially the champion of today’s birthday battle.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="emoji">🎀</div>
+        <h2>Sanrio Cafe</h2>
+        <p>
+          Maximum cuteness mode activated for your special day.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="message-section">
+      <h3>Special Message 💌</h3>
+
+      <p class="message">
+        Happy Birthday!!!  
+        I hope this year gives you happiness, chaos, amazing memories,
+        and everything you’ve been wishing for.
+        You deserve all the love, all the fun, and all the best Pokémon pulls.
+        Never stop being your weird amazing self 💖
+      </p>
+
+      <button class="surprise-btn" onclick="showSurprise()">
+        Click For Surprise 🎁
+      </button>
+
+      <div class="surprise" id="surprise">
+        🎂 YOU UNLOCKED: BEST SIBLING EVER TITLE 🎂
+      </div>
+
+    </div>
+
+    <div class="footer">
+      made with love + spider webs + pokéballs + sanrio magic ✨
+    </div>
+
+  </div>
+
+  <script>
+    function showSurprise(){
+      document.getElementById("surprise").style.display = "block";
+
+      // confetti effect
+      for(let i=0;i<50;i++){
+
+        const confetti = document.createElement("div");
+
+        confetti.innerHTML = ["🎉","✨","💖","⚡","🎀"][Math.floor(Math.random()*5)];
+
+        confetti.style.position = "fixed";
+        confetti.style.left = Math.random()*100 + "vw";
+        confetti.style.top = "-20px";
+        confetti.style.fontSize = (Math.random()*20 + 20) + "px";
+
+        confetti.style.animation = `
+          fall ${Math.random()*3 + 2}s linear forwards
+        `;
+
+        document.body.appendChild(confetti);
+
+        setTimeout(()=>{
+          confetti.remove();
+        },5000);
+      }
+    }
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes fall{
+        to{
+          transform:translateY(110vh) rotate(720deg);
+          opacity:0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+
+</body>
+</html>
