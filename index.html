@@ -22,10 +22,20 @@
       font-family:'Fredoka',sans-serif;
 
       background:
-      radial-gradient(circle at top left,#7df9ff 0%,transparent 30%),
-      radial-gradient(circle at top right,#ff73fa 0%,transparent 30%),
-      radial-gradient(circle at bottom left,#7cff7c 0%,transparent 30%),
-      linear-gradient(135deg,#00c6ff,#0072ff,#6a5cff);
+      radial-gradient(circle at top left,#ffd6ef 0%,transparent 25%),
+      radial-gradient(circle at top right,#b8fff5 0%,transparent 25%),
+      radial-gradient(circle at bottom right,#c6f7ff 0%,transparent 30%),
+
+      linear-gradient(
+        135deg,
+        #7be7dc,
+        #5fd6e8,
+        #78bfff,
+        #d7a6ff,
+        #ffb7dc
+      );
+
+      background-attachment:fixed;
 
       min-height:100vh;
       overflow-x:hidden;
@@ -46,13 +56,13 @@
     }
 
     body::before{
-      background:#00ffee;
+      background:#8effe8;
       top:-100px;
       left:-100px;
     }
 
     body::after{
-      background:#ff4df8;
+      background:#ffc6f0;
       bottom:-100px;
       right:-100px;
     }
@@ -71,21 +81,12 @@
       font-size:6rem;
       letter-spacing:6px;
 
-      background:linear-gradient(
-      90deg,
-      #ffffff,
-      #8ffcff,
-      #ffffff,
-      #ffb3ff
-      );
-
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
+      color:white;
 
       text-shadow:
       0 0 10px rgba(255,255,255,0.8),
-      0 0 25px rgba(0,255,255,0.6),
-      0 0 40px rgba(255,0,255,0.4);
+      0 0 25px rgba(170,255,255,0.7),
+      0 0 40px rgba(255,200,255,0.5);
 
       animation:float 3s infinite ease-in-out;
     }
@@ -110,44 +111,46 @@
     }
 
     .characters{
-      margin-top:60px;
+      margin-top:70px;
 
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:35px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+
+      align-items:center;
+      justify-items:center;
+
+      gap:20px;
+
+      width:100%;
+      max-width:1400px;
     }
 
     .characters img{
-      width:220px;
-      height:220px;
+      width:190px;
+      height:190px;
       object-fit:contain;
 
       transition:.35s;
 
       filter:
-      drop-shadow(0 0 12px rgba(255,255,255,0.8))
-      drop-shadow(0 0 25px rgba(0,255,255,0.5));
+      drop-shadow(0 0 18px rgba(255,255,255,0.7))
+      drop-shadow(0 0 30px rgba(120,255,240,0.5));
     }
 
     .characters img:hover{
-      transform:scale(1.1) rotate(4deg);
-
-      filter:
-      drop-shadow(0 0 20px #fff)
-      drop-shadow(0 0 35px #00f7ff);
+      transform:scale(1.08) rotate(4deg);
     }
 
     .spotify{
-      margin-top:55px;
+      margin-top:60px;
     }
 
     .spotify iframe{
       border-radius:25px;
 
       box-shadow:
-      0 0 25px rgba(0,255,255,0.5),
-      0 0 40px rgba(255,0,255,0.25);
+      0 0 25px rgba(255,255,255,0.35),
+      0 0 35px rgba(170,255,255,0.3);
     }
 
     .message-box{
@@ -155,15 +158,15 @@
       width:90%;
       max-width:850px;
 
-      background:rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.16);
 
       backdrop-filter:blur(18px);
 
       border:1px solid rgba(255,255,255,0.35);
 
       box-shadow:
-      0 8px 32px rgba(0,0,0,0.2),
-      inset 0 0 15px rgba(255,255,255,0.2);
+      0 8px 32px rgba(0,0,0,0.15),
+      inset 0 0 15px rgba(255,255,255,0.18);
 
       border-radius:30px;
 
@@ -193,19 +196,31 @@
       0 0 10px rgba(255,255,255,0.5);
     }
 
+    @media(max-width:1000px){
+
+      .characters{
+        grid-template-columns:repeat(2,1fr);
+      }
+
+    }
+
     @media(max-width:768px){
 
       h1{
         font-size:3.8rem;
       }
 
+      .subtitle{
+        font-size:1rem;
+      }
+
+      .characters{
+        grid-template-columns:1fr;
+      }
+
       .characters img{
         width:150px;
         height:150px;
-      }
-
-      .subtitle{
-        font-size:1rem;
       }
 
     }
@@ -220,34 +235,38 @@
     <h1>HAPPY BIRTHDAY</h1>
 
     <p class="subtitle">
-      Spider-Verse + Pokémon + Sanrio came together to celebrate YOU 💖
+      Spider-Verse + Pokémon + Wooper vibes came together to celebrate YOU 💖
     </p>
 
     <div class="characters">
-    <!-- Spider-Man -->
-    <img src="https://pngimg.com/uploads/spider_man/spider_man_PNG90.png">
-    
-    <!-- Pikachu -->
-    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png">
-    <!-- Wooper -->
-    <img src="https://img.pokemondb.net/sprites/scarlet-violet/normal/wooper.png">
-  
-    <!-- Eevee -->
-    <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/133.png">
-  
- 
+
+      <!-- Spider-Man -->
+      <img src="https://pngimg.com/uploads/spider_man/spider_man_PNG90.png">
+
+      <!-- Pikachu -->
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/025.png">
+
+      <!-- Wooper -->
+      <img
+      src="https://img.pokemondb.net/sprites/scarlet-violet/normal/wooper.png"
+      style="width:120px;height:120px;">
+
+      <!-- Eevee -->
+      <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/133.png">
+
+    </div>
+
     <div class="spotify">
 
-      <!-- replace playlist link here -->
+      <!-- replace with your playlist -->
       <iframe
-    style="border-radius:25px"
-    src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?theme=0"
-    width="320"
-    height="380"
-    frameBorder="0"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy">
-    </iframe>
+      src="https://open.spotify.com/embed/playlist/37i9dQZF1DXcBWIGoYBM5M?theme=0"
+      width="320"
+      height="380"
+      frameBorder="0"
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy">
+      </iframe>
 
     </div>
 
@@ -262,9 +281,7 @@
         i hope this year gives you happiness,
         fun memories, chaos, and everything you want. <br><br>
 
-        you deserve all the love in every universe —
-        even the spider-verse, pokémon world,
-        and sanrio universe agree 💖
+        you deserve all the love in every universe 💖
       </p>
 
     </div>
